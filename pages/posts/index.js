@@ -1,27 +1,14 @@
 import AllPosts from "../../components/posts/allPosts";
-export default function AllPostsPage() {
-  const dummyData = [
-    {
-      title: "first post ",
-      image: "nature.jpg",
-      date: "2022,02,10",
-      excerpt: "lorem asndbabsndbasn aksbdnasb",
-      slug: "first-post",
+import { getAllPosts } from "../../lib/postsUtil";
+export default function AllPostsPage(props) {
+  return <AllPosts posts={props.posts} />;
+}
+
+export function getStaticProps() {
+  const allPosts = getAllPosts();
+  return {
+    props: {
+      posts: allPosts,
     },
-    {
-      title: "second post ",
-      image: "nature.jpg",
-      date: "2022,02,10",
-      excerpt: "lorem asndbabsndbasn aksbdnasb",
-      slug: "first-post",
-    },
-    {
-      title: "third post ",
-      image: "nature.jpg",
-      date: "2022,02,10",
-      excerpt: "lorem asndbabsndbasn aksbdnasb",
-      slug: "first-post",
-    },
-  ];
-  return <AllPosts posts={dummyData} />;
+  };
 }

@@ -17,7 +17,7 @@ export default function MainNavigation() {
           </li>
           <li>
             {" "}
-            <Link href={"/Contact"}>Contact</Link>
+            <Link href={"/contact"}>Contact</Link>
           </li>
         </ul>
       </nav>
